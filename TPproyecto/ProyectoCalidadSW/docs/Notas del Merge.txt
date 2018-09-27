@@ -1,0 +1,84 @@
+﻿10-06-2016
+Desarrollador: Facundo Maero
+Merge del branch dev-branch-singleton al branch Master
+Se agregó la funcionalidad: Singleton en el Heart Model
+Se corrigió el error: No se corrigio ningun error.
+Comentarios: Al presionar el boton de siguiente se intenta crear una nueva instancia del modelo.
+En lugar de suceder esto, se muestran las veces que se trato de realizar la accion.
+
+10-06-2016
+Desarrollador: Facundo Maero
+Merge del branch 0.2.0 al branch Master
+Se agregó la funcionalidad Modelo MP3 con funciones basicas
+Se corrigió el error: no se corrigieron errores.
+Comentarios: Funciona play, pausa, stop, siguiente, anterior, control de volumen.
+
+10-06-2016
+Desarrollador: Gustavo Gonzalez
+Merge del branch 0.3.0 al branch Master
+Se agregó la funcionalidad Controlador MP3 con funciones basicas
+Se corrigió el error: no se corrigieron errores.
+Comentarios: Falta quitar el casteo cuando se cambie la interfaz MP3Model
+
+10-06-2016
+Desarrollador: Facundo Maero
+Merge del branch 0.4.0 al branch Master
+Se agregó la funcionalidad Adapter MP3 para interfasear con DJView
+Se corrigió el error: no se corrigieron errores.
+Comentarios: --
+
+11-06-2016
+Desarrollador: Facundo Maero
+Merge del branch 0.5.0 al branch Master
+Se agregó la funcionalidad: Interfaz TrackObserver, se agregaron metodos para agregar y borrar observers en mp3model, y se los implemento.
+Se corrigió el error: no se corrigieron errores.
+Comentarios: No se tiene escribio el metodo get Track Info para obtener los datos de la cancion actual.
+
+11-06-2016
+Desarrollador: Gustavo Gonzalez
+Merge del branch 0.6.0 al branch Master
+Se agregó la funcionalidad MP3View con funciones basicas
+Se corrigió el error: no se corrigieron errores.
+Comentarios: --
+
+11-06-2016
+Desarrollador: Facundo Maero
+Merge del branch 0.7.0 al branch Master
+Se agregó la funcionalidad: MP3Controller2 para controlar la nueva vista. Solo tiene funcionalidades basicas.
+Se corrigió el error: no se corrigieron errores.
+Comentarios: No compila porque se declaro una vista MP3View pero en esta rama ese archivo no existe. Se soluciona al hacer merge.
+
+12-06-2016
+Desarrollador: Gustavo Gonzalez
+Merge del branch 0.8.0 al branch Master
+Se agregó la funcionalidad: PlayListUi y a–adir canciones desde la Vista.
+Se corrigió el error: no se corrigieron errores.
+Comentarios: Por el momento se puede a–adir œnicamente un mp3 a la vez.
+
+12-06-2016
+Desarrollador: Gustavo Gonzalez
+Merge del branch 0.9.0 al branch Master
+Se agregó la funcionalidad: Patron State.
+Se corrigió el error: no se corrigieron errores.
+Comentarios: Se implemento el patron State al MP3Model. Se creo la interfaz MP3State y las clases que la implementan.
+
+18-06-2016
+Desarrollador: Gustavo Gonzalez
+Merge del branch 0.10.0 al branch Master
+Se agregó la funcionalidad: Ninguna.
+Se corrigió el error: Se corrigieron bugs en la vista para tener una version estable del producto.
+Comentarios: Fue necesario peque–os cambios en en controlador y el modelo para solucionar el problema.
+
+18-06-2016
+Desarrollador: Facundo Maero
+Merge del branch 0.11.0 al branch Master
+Se agregó la funcionalidad: Barra de progreso en sincronia con el progreso de la cancion. Se cuentan los segundos desde que se comenzo a reproducir la pista. Para realizarlo se crearon las clases ProgressThread y ProgressBar.
+Se corrigió el error: Cuando una cancion finaliza, ahora se avanza a la siguiente en la lista automaticamente.
+Comentarios: Para lograr esta funcionalidad se implemento un nuevo tipo de Observer para la vista, por el cual se le notifica que avance la barra de progreso y el tiempo en segundos.
+
+19-06-2016
+Desarrollador: Facundo Maero
+Merge del branch 0.13.0-hotfix al branch Master
+Se agregó la funcionalidad: Ninguna.
+Se corrigió el error: Se corrigieron errores en la logica del patron state.
+Comentarios: Se tuvieron que comentar los tests para poder hacer el merge, se desconoce la causa de su fallo.
