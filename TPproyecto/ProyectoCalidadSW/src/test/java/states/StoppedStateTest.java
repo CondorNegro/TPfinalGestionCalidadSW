@@ -66,7 +66,7 @@ public class StoppedStateTest {
 
 	@Test
 	public void testValues(){
-		assertEquals(4, this.playListSize);
+		assertEquals(5, this.playListSize);
 		assertEquals(0, this.index);
 		assertTrue(Double.valueOf(1.0).equals(this.volumen));
 		assertFalse(this.isPlaying);
@@ -102,7 +102,7 @@ public class StoppedStateTest {
 		assertFalse("IsPlaying deberia ser false",mp3Model.IsPlaying());
 		assertEquals("El Indice deberia ser 0",0, mp3Model.getIndex());
 		stoppedState.previousSong();
-		assertEquals("El indice ahora deberia ser 3",3, mp3Model.getIndex());
+		assertEquals("El indice ahora deberia ser 4",4, mp3Model.getIndex());
 		assertTrue("El volumen deberia mantenerse constante",Double.valueOf(this.volumen).equals(mp3Model.getVolumen()));
 		assertTrue("Y ahora deberia estar reproduciendo",mp3Model.IsPlaying());
 	}

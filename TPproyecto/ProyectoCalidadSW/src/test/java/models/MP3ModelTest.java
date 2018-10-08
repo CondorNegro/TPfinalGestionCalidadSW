@@ -18,6 +18,7 @@ public class MP3ModelTest {
 	private MP3Model mp3Model = null;
 	private String playListPath = "src/main/resources/default songs/";
 	private String pinkPantherSongName = "Pink Panther Theme.mp3";
+	private String emptySongName = "Daft Punk - One More Time.mp3";
 	
 	@Before
 	public void setUp() throws Exception {
@@ -48,13 +49,13 @@ public class MP3ModelTest {
 		assertEquals(0, mp3Model.getCurrentPlaylist().length); 
 		
 		mp3Model.addPlayList(playListPath);
-		assertEquals(4, mp3Model.getCurrentPlaylist().length); 
+		assertEquals(5, mp3Model.getCurrentPlaylist().length); 
 	}
 	
 	@Test
 	public void testClearPlayList(){
 		mp3Model.addPlayList(playListPath);
-		assertEquals(4, mp3Model.getCurrentPlaylist().length); 
+		assertEquals(5, mp3Model.getCurrentPlaylist().length); 
 		
 		mp3Model.clearPlaylist();
 		assertEquals(0, mp3Model.getCurrentPlaylist().length); 
@@ -67,8 +68,8 @@ public class MP3ModelTest {
 		
 		mp3Model.addPlayList(playListPath);
 		
-		assertEquals(4, mp3Model.getCurrentPlaylist().length);
-		assertEquals(4, mp3Model.getPlaylistSize());
+		assertEquals(5, mp3Model.getCurrentPlaylist().length);
+		assertEquals(5, mp3Model.getPlaylistSize());
 	}
 	
 	@Test
@@ -78,7 +79,7 @@ public class MP3ModelTest {
 		
 		mp3Model.addPlayList(playListPath);
 
-		assertEquals(4, mp3Model.getPlaylistSize());
+		assertEquals(5, mp3Model.getPlaylistSize());
 		assertEquals(0, mp3Model.getIndex());
 	}
 	
@@ -91,7 +92,7 @@ public class MP3ModelTest {
 		assertEquals(indexValue, mp3Model.getIndex());
 		
 		mp3Model.addPlayList(playListPath);
-		assertEquals(4, mp3Model.getPlaylistSize());
+		assertEquals(5, mp3Model.getPlaylistSize());
 		
 		assertTrue(mp3Model.setIndex(2));
 		assertEquals(2, mp3Model.getIndex());
@@ -186,10 +187,10 @@ public class MP3ModelTest {
 	@Test
 	public void testRemovePlayList(){
 		mp3Model.addPlayList(playListPath);
-		assertEquals(4, mp3Model.getPlaylistSize());
+		assertEquals(5, mp3Model.getPlaylistSize());
 		
 		mp3Model.removePlayList(2);
-		assertEquals(3, mp3Model.getPlaylistSize());
+		assertEquals(4, mp3Model.getPlaylistSize());
 	}
 	
 	@Test
@@ -333,13 +334,53 @@ public class MP3ModelTest {
 		assertEquals(0, mp3Model.getPlaylist().size());
 		
 		mp3Model.addPlayList(playListPath);
-		assertEquals(4, mp3Model.getPlaylist().size());
+		assertEquals(5, mp3Model.getPlaylist().size());
 		
 		mp3Model.removePlayList(0);
-		assertEquals(3, mp3Model.getPlaylist().size());
+		assertEquals(4, mp3Model.getPlaylist().size());
 		
 		mp3Model.clearPlaylist();
 		assertEquals(0, mp3Model.getPlaylist().size());
+	}
+	
+	@Test
+	public void testGetSongInfoEmptySong() {
+		mp3Model.addPlayList(playListPath + emptySongName);
+		
+		String track = "Track: null";
+		String artist = "Artist: null";
+		String title = "Title: Daft Punk - One More Time";
+		String album = "Album: null";
+		String year = "Year: null";
+		String genre = "Genre: null";
+		
+		DefaultListModel<String> songInfo = mp3Model.getSongInfo();
+		
+		assertEquals(track, songInfo.get(0));
+		assertEquals(artist, songInfo.get(1));
+		assertEquals(title, songInfo.get(2));
+		assertEquals(album, songInfo.get(3));
+		assertEquals(year, songInfo.get(4));
+		assertEquals(genre, songInfo.get(5));
+	}
+	
+	@Test
+	public void testGetAlbumArtEmptySong() {
+		mp3Model.addPlayList(playListPath + emptySongName);
+		assertEquals(null, mp3Model.getAlbumArt());		
+	}
+	
+	@Test
+	public void testRemoveSongEmptyPlaylist() {
+		assertEquals(0, mp3Model.getPlaylistSize());
+		mp3Model.removePlayList(1);
+		assertEquals(0, mp3Model.getPlaylistSize());
+	}
+	
+	@Test
+	public void testAddNotMp3File() {
+		mp3Model.addPlayList(pinkPantherSongName + ".aac");
+		assertEquals(0, mp3Model.getPlaylistSize());
 	}
 	
 }

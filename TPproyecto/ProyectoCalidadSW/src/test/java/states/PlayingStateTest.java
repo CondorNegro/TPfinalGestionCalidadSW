@@ -67,7 +67,7 @@ public class PlayingStateTest {
 
 	@Test
 	public void testValues(){
-		assertEquals(4, this.playListSize);
+		assertEquals(5, this.playListSize);
 		assertEquals(0, this.index);
 		assertTrue(Double.valueOf(1.0).equals(this.volumen));
 		assertTrue(this.isPlaying);
@@ -95,7 +95,7 @@ public class PlayingStateTest {
 		assertEquals("Verifico que el indice arranque en 0",0, mp3Model.getIndex());
 		playingState.previousSong();
 		assertTrue("Deberia seguir reproduciendo",mp3Model.IsPlaying());
-		assertEquals("El nuevo indice deberia ser 3",3, mp3Model.getIndex());
+		assertEquals("El nuevo indice deberia ser 4",4, mp3Model.getIndex());
 	}
 
 	@Test
