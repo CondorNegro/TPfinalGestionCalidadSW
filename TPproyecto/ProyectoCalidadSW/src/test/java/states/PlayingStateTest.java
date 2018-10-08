@@ -104,4 +104,19 @@ public class PlayingStateTest {
 		assertTrue("Deberia pasar al estado stop",mp3Model.getState() instanceof StoppedState);
 		assertFalse("IsPlaying deberia ser false",mp3Model.IsPlaying());
 	}
+	
+	//-------------------------------------------------
+	//		Tests Gestion de Calidad de Software
+	//-------------------------------------------------
+	
+	@Test
+	public void testPreviousSongNotCircular(){
+		assertTrue(mp3Model.IsPlaying());
+		playingState.nextSong();
+		assertTrue("Deberia seguir reproduciendo",mp3Model.IsPlaying());
+		assertEquals(1, mp3Model.getIndex());
+		playingState.previousSong();
+		assertTrue("Deberia seguir reproduciendo",mp3Model.IsPlaying());
+		assertEquals(0, mp3Model.getIndex());
+	}
 }

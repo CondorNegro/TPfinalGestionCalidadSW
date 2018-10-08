@@ -110,4 +110,19 @@ public class PausedStateTest {
 		pauseState.stop();
 		assertTrue(mp3Model.getState() instanceof StoppedState);
 	}
+	
+	//-------------------------------------------------
+	//		Tests Gestion de Calidad de Software
+	//-------------------------------------------------
+	
+	@Test
+	public void testPreviousSongNotCircular(){
+		assertFalse(mp3Model.IsPlaying());
+		pauseState.nextSong();
+		assertTrue(mp3Model.IsPlaying());
+		assertEquals(1, mp3Model.getIndex());
+		pauseState.previousSong();
+		assertTrue(mp3Model.IsPlaying());
+		assertEquals(0, mp3Model.getIndex());
+	}
 }

@@ -2,7 +2,11 @@ package test.java.models;
 
 import java.lang.reflect.Field;
 
+import javax.swing.DefaultListModel;
+
 import main.java.models.MP3Model;
+import main.java.states.PlayingState;
+import main.java.states.StoppedState;
 
 import org.junit.After;
 import org.junit.Before;
@@ -234,4 +238,108 @@ public class MP3ModelTest {
 		assertFalse(mp3Model.IsPlaying());
 		assertEquals(2, mp3Model.getIndex());
 	}
+	
+	//-------------------------------------------------
+	//		Tests Gestion de Calidad de Software
+	//-------------------------------------------------
+	
+	@Test
+	public void testSingleton() {
+		MP3Model mp3Model2 = MP3Model.getInstance();
+		assertEquals(mp3Model, mp3Model2);
+	}
+	
+	@Test
+	public void testNextSong() {
+		mp3Model.addPlayList(playListPath);
+		mp3Model.play();
+		
+		assertEquals(mp3Model.getIndex(), 0);
+		mp3Model.nextSong();
+		assertEquals(mp3Model.getIndex(), 1);
+	}
+	
+	@Test
+	public void testPreviousSong() {
+		mp3Model.addPlayList(playListPath);
+		mp3Model.play();
+		
+		assertEquals(mp3Model.getIndex(), 0);
+		mp3Model.previousSong();
+		assertEquals(mp3Model.getIndex(), mp3Model.getPlaylistSize() - 1);
+	}
+	
+	@Test
+	public void testSetIncorrectVolumen(){
+		double currentVolume = mp3Model.getVolumen();
+		
+		mp3Model.setVolumen(-1);
+		assertTrue(Double.valueOf(currentVolume).equals(mp3Model.getVolumen()));
+		
+		mp3Model.setVolumen(5);
+		assertTrue(Double.valueOf(currentVolume).equals(mp3Model.getVolumen()));
+	}
+	
+	@Test
+	public void testGetState() {
+		mp3Model.addPlayList(playListPath);
+		
+		mp3Model.play();
+		assertTrue(mp3Model.getState() instanceof PlayingState);
+		
+		mp3Model.stop();
+		assertTrue(mp3Model.getState() instanceof StoppedState);	
+	}
+	
+	@Test
+	public void testGetAlbumArt() {
+		mp3Model.addPlayList(playListPath);
+		assertNotEquals(mp3Model.getAlbumArt(), null);
+	}
+	
+	@Test
+	public void testGetCurrentSongInfo() {
+		
+		String track = "Track: 1";
+		String artist = "Artist: Vangelis";
+		String title = "Title: Chariots of Fire";
+		String album = "Album: Chariots of Fire Soundtrack";
+		String year = "Year: 1981";
+		String genre = "Genre: Soundtrack";
+		
+		mp3Model.addPlayList(playListPath);
+		DefaultListModel<String> songInfo = mp3Model.getSongInfo();
+		
+		assertEquals(track, songInfo.get(0));
+		assertEquals(artist, songInfo.get(1));
+		assertEquals(title, songInfo.get(2));
+		assertEquals(album, songInfo.get(3));
+		assertEquals(year, songInfo.get(4));
+		assertEquals(genre, songInfo.get(5));
+	}
+	
+	@Test
+	public void testGetCurrentSongDurationEmpty(){
+		assertEquals("00:00", mp3Model.getCurrentSongDuration());
+	}
+	
+	@Test
+	public void testGetCurrentSongNameEmpty() {
+		assertEquals("", mp3Model.getCurrentTrackName());
+	}
+	
+	@Test
+	public void testGetPlayList() {
+		assertEquals(0, mp3Model.getPlaylist().size());
+		
+		mp3Model.addPlayList(playListPath);
+		assertEquals(4, mp3Model.getPlaylist().size());
+		
+		mp3Model.removePlayList(0);
+		assertEquals(3, mp3Model.getPlaylist().size());
+		
+		mp3Model.clearPlaylist();
+		assertEquals(0, mp3Model.getPlaylist().size());
+	}
+	
 }

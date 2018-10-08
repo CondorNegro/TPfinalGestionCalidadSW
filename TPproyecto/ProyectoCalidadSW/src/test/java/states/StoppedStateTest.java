@@ -106,4 +106,16 @@ public class StoppedStateTest {
 		assertTrue("El volumen deberia mantenerse constante",Double.valueOf(this.volumen).equals(mp3Model.getVolumen()));
 		assertTrue("Y ahora deberia estar reproduciendo",mp3Model.IsPlaying());
 	}
+	
+	//-------------------------------------------------
+	//		Tests Gestion de Calidad de Software
+	//-------------------------------------------------
+	
+	@Test
+	public void testPreviousSongNotCircular(){
+		stoppedState.nextSong();
+		assertEquals(1, mp3Model.getIndex());
+		stoppedState.previousSong();
+		assertEquals(0, mp3Model.getIndex());
+	}
 }
