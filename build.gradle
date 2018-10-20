@@ -14,8 +14,9 @@ dependencies {
 }
 
 checkstyle {
-    ignoreFailures = true
+    ignoreFailures = false
     toolVersion = '6.6'
+    configFile file("config/checkstyle/checkstyle.xml")
 }
 
 tasks.withType(Checkstyle) {
