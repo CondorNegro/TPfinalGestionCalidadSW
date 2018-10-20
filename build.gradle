@@ -27,25 +27,25 @@ tasks.withType(Checkstyle) {
 }
 
 pmd {
-    ignoreFailures = true
+    ignoreFailures = false
 }
 
 tasks.withType(Pmd) {
     reports {
-        xml.enabled = false
+        xml.enabled = true
         html.enabled = true
     }
 }
 
 findbugs {
-    ignoreFailures = true
+    ignoreFailures = false
     effort = "max"
     reportLevel = "low"
 }
 
 tasks.withType(FindBugs) {
     reports {
-        xml.enabled = false
+        xml.enabled = true
         html.enabled = true
     }
 }
