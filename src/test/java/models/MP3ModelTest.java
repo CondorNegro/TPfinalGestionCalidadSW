@@ -301,7 +301,7 @@ public class MP3ModelTest {
 	@Test
 	public void testGetCurrentSongInfo() {
 		
-		String track = "Track: 2";
+		String track = "Track: 2" ;
 		String artist = "Artist: Lalo Schifrin";
 		String title = "Title: Mission Impossible Theme";
 		String album = "Album: Mission Impossible Soundtrack";
