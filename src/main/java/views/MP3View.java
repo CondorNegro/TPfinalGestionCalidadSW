@@ -36,8 +36,8 @@ import main.java.models.MP3ModelInterface;
 public class MP3View extends JFrame implements ActionListener, TrackObserver, ProgressObserver {
 
 	/**
-	 * 
-	 */
+	* 
+	*/
 		private static final long serialVersionUID = 1L;
 	MP3ModelInterface model;
 	MP3Controller2 controller = null;
