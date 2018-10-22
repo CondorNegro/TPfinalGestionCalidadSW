@@ -241,18 +241,18 @@ public class MP3View extends JFrame implements ActionListener, TrackObserver, Pr
 	private void addListeners(){
 			btnPlay.addActionListener(this);
 			btnPrev.addActionListener(this);
-		btnNext.addActionListener(this);
-		btnAdd.addActionListener(this);
-		btnMute.addActionListener(this);
-		btnStop.addActionListener(this);
-		btnArt.addActionListener(this);
-		btnInfo.addActionListener(this);
-		btnDelete.addActionListener(this);
-		volSlider.addChangeListener(new ChangeListener() {
-			public void stateChanged(ChangeEvent e) {
-				controller.setVolumen(Double.valueOf(((JSlider) e.getSource()).getValue()) / 100.0);
-			}
-		});
+			btnNext.addActionListener(this);
+			btnAdd.addActionListener(this);
+			btnMute.addActionListener(this);
+			btnStop.addActionListener(this);
+			btnArt.addActionListener(this);
+			btnInfo.addActionListener(this);
+			btnDelete.addActionListener(this);
+			volSlider.addChangeListener(new ChangeListener() {
+				public void stateChanged(ChangeEvent e) {
+					controller.setVolumen(Double.valueOf(((JSlider) e.getSource()).getValue()) / 100.0);
+				}
+			});
 	}
 	
 	//Agrego mensajes al apuntar con el mouse en cada boton
