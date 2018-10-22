@@ -288,7 +288,7 @@ public class MP3View extends JFrame implements ActionListener, TrackObserver, Pr
 		else if(event.getSource() == btnAdd){
 		    FileNameExtensionFilter filter = new FileNameExtensionFilter("mp3 Files", "mp3");
 		    chooser.setFileFilter(filter);
-		int returnVal = chooser.showOpenDialog(btnAdd);
+			int returnVal = chooser.showOpenDialog(btnAdd);
 		    if(returnVal == JFileChooser.APPROVE_OPTION) {
 		    	File file = chooser.getSelectedFile();
 		    	String path = file.getAbsolutePath();
