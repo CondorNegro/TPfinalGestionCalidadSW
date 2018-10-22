@@ -123,7 +123,7 @@ public class MP3View extends JFrame implements ActionListener, TrackObserver, Pr
 	private void init()
 	{
 		//MainView
-		setIconImage(frameIcon.getImage());
+				setIconImage(frameIcon.getImage());
 		setTitle("Music Player - Java - 1.0");
 		int _H = 400;
 		int _W = 400;
