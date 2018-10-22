@@ -108,13 +108,13 @@ public class MP3View extends JFrame implements ActionListener, TrackObserver, Pr
 	 */
 	public MP3View(MP3ModelInterface model)
 	{
-		this.model = model;
-		this.init();										//Inicializa la vista
-		this.updatePlaylistInfo();							//Muestra la playlist añadida por defecto en el JScrollPanel
-		this.addListeners();								//Añade EventListener a los botones
-		addHoverMessages();									//Agrega mensajes de ayuda
-		model.registerObserver((TrackObserver)this);
-		model.registerObserver((ProgressObserver)this);
+							this.model = model;
+							this.init();										//Inicializa la vista
+							this.updatePlaylistInfo();							//Muestra la playlist añadida por defecto en el JScrollPanel
+							this.addListeners();								//Añade EventListener a los botones
+							addHoverMessages();									//Agrega mensajes de ayuda
+							model.registerObserver((TrackObserver)this);
+							model.registerObserver((ProgressObserver)this);
 	}
 	
 	/**
