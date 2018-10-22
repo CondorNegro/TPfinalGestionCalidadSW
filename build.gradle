@@ -27,7 +27,7 @@ tasks.withType(Checkstyle) {
 }
 
 pmd {
-    ignoreFailures = true
+    ignoreFailures = false
 }
 
 tasks.withType(Pmd) {
@@ -38,7 +38,7 @@ tasks.withType(Pmd) {
 }
 
 findbugs {
-    ignoreFailures = true
+    ignoreFailures = false
     effort = "max"
     reportLevel = "low"
 }
