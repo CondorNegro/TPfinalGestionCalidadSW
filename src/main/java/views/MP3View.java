@@ -42,7 +42,7 @@ public class MP3View extends JFrame implements ActionListener, TrackObserver, Pr
 	MP3ModelInterface model;
 	MP3Controller2 controller = null;
 	//Other
-	DefaultListModel<String> songList = new DefaultListModel<String>();
+	   DefaultListModel<String> songList = new DefaultListModel<String>();
 	
 	//Components
 	JPanel container = new JPanel();
