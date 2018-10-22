@@ -378,8 +378,7 @@ public class MP3View extends JFrame implements ActionListener, TrackObserver, Pr
 	@Override
 	public void updateTrackProgress(int progress, int size) {
 		if (progress==0){
-			progressBar.reset()
-			;
+			progressBar.reset();
 		}
 		else {
 			progressBar.increase();
