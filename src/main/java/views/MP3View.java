@@ -108,13 +108,13 @@ public class MP3View extends JFrame implements ActionListener, TrackObserver, Pr
 	 */
 	public MP3View(MP3ModelInterface model)
 	{
-							this.model = model;
-							this.init();										//Inicializa la vista
-							this.updatePlaylistInfo();							//Muestra la playlist añadida por defecto en el JScrollPanel
-							this.addListeners();								//Añade EventListener a los botones
-							addHoverMessages();									//Agrega mensajes de ayuda
-							model.registerObserver((TrackObserver)this);
-							model.registerObserver((ProgressObserver)this);
+		this.model = model;
+		this.init();										//Inicializa la vista
+		this.updatePlaylistInfo();							//Muestra la playlist añadida por defecto en el JScrollPanel
+		this.addListeners();								//Añade EventListener a los botones
+		addHoverMessages();									//Agrega mensajes de ayuda
+		model.registerObserver((TrackObserver)this);
+		model.registerObserver((ProgressObserver)this);
 	}
 	
 	/**
@@ -123,17 +123,17 @@ public class MP3View extends JFrame implements ActionListener, TrackObserver, Pr
 	private void init()
 	{
 		//MainView
-							setIconImage(frameIcon.getImage());
-							setTitle("Music Player - Java - 1.0");
-							int _H = 400;
-							int _W = 400;
-							setSize(_W,_H);
-							setLocationRelativeTo(null);
-							setDefaultCloseOperation(EXIT_ON_CLOSE);
-							setResizable(false);
-							//Container
-							container.setLayout(null);
-							getContentPane().add(container);
+		setIconImage(frameIcon.getImage());
+		setTitle("Music Player - Java - 1.0");
+		int _H = 400;
+		int _W = 400;
+		setSize(_W,_H);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setResizable(false);
+		//Container
+		container.setLayout(null);
+		getContentPane().add(container);
 		
 
 		//Panel de nowPlaying(el que va arriba)
