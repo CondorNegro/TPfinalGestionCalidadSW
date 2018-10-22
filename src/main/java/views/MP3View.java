@@ -239,7 +239,7 @@ public class MP3View extends JFrame implements ActionListener, TrackObserver, Pr
 	}
 	
 	private void addListeners(){
-		btnPlay.addActionListener(this);
+			btnPlay.addActionListener(this);
 		btnPrev.addActionListener(this);
 		btnNext.addActionListener(this);
 		btnAdd.addActionListener(this);
