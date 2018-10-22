@@ -21,18 +21,18 @@ checkstyle {
 
 tasks.withType(Checkstyle) {
     reports {
-        xml.enabled = true
+        xml.enabled = false
         html.enabled = true
     }
 }
 
 pmd {
-    ignoreFailures = false
+    ignoreFailures = true
 }
 
 tasks.withType(Pmd) {
     reports {
-        xml.enabled = true
+        xml.enabled = false
         html.enabled = true
     }
 }
