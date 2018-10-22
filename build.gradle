@@ -32,7 +32,7 @@ pmd {
 
 tasks.withType(Pmd) {
     reports {
-        xml.enabled = true
+        xml.enabled = false
         html.enabled = true
     }
 }
@@ -45,7 +45,7 @@ findbugs {
 
 tasks.withType(FindBugs) {
     reports {
-        xml.enabled = true
+        xml.enabled = false
         html.enabled = true
     }
 }
