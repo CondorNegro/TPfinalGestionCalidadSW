@@ -38,7 +38,7 @@ public class MP3View extends JFrame implements ActionListener, TrackObserver, Pr
 	/**
 	 * 
 	 */
-				private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 	MP3ModelInterface model;
 	MP3Controller2 controller = null;
 	//Other
@@ -123,17 +123,17 @@ public class MP3View extends JFrame implements ActionListener, TrackObserver, Pr
 	private void init()
 	{
 		//MainView
-		setIconImage(frameIcon.getImage());
-		setTitle("Music Player - Java - 1.0");
-		int _H = 400;
-		int _W = 400;
-		setSize(_W,_H);
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setResizable(false);
-		//Container
-		container.setLayout(null);
-		getContentPane().add(container);
+							setIconImage(frameIcon.getImage());
+							setTitle("Music Player - Java - 1.0");
+							int _H = 400;
+							int _W = 400;
+							setSize(_W,_H);
+							setLocationRelativeTo(null);
+							setDefaultCloseOperation(EXIT_ON_CLOSE);
+							setResizable(false);
+							//Container
+							container.setLayout(null);
+							getContentPane().add(container);
 		
 
 		//Panel de nowPlaying(el que va arriba)
