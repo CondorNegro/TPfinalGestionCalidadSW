@@ -49,5 +49,14 @@ tasks.withType(FindBugs) {
         html.enabled = false
     }
 }
+task findSecurityBugs(type: FindBugs) {
+    findbugs {
+        xml.enabled = true
+        html.enabled = false
+        ignoreFailures = true
+        effort = "max"
+        reportLevel = "low"
+    }
+}
 
 jacocoTestReport.dependsOn test
