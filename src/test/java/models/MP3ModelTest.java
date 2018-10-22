@@ -301,11 +301,11 @@ public class MP3ModelTest {
 	@Test
 	public void testGetCurrentSongInfo() {
 		
-		String track = "Track: 1";
-		String artist = "Artist: Vangelis";
-		String title = "Title: Chariots of Fire";
-		String album = "Album: Chariots of Fire Soundtrack";
-		String year = "Year: 1981";
+		String track = "Track: 2" ;
+		String artist = "Artist: Lalo Schifrin";
+		String title = "Title: Mission Impossible Theme";
+		String album = "Album: Mission Impossible Soundtrack";
+		String year = "Year: 1996";
 		String genre = "Genre: Soundtrack";
 		
 		mp3Model.addPlayList(playListPath);
