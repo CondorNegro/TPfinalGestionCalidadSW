@@ -38,7 +38,7 @@ public class MP3View extends JFrame implements ActionListener, TrackObserver, Pr
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+				private static final long serialVersionUID = 1L;
 	MP3ModelInterface model;
 	MP3Controller2 controller = null;
 	//Other
