@@ -97,7 +97,7 @@ public class MP3View extends JFrame implements ActionListener, TrackObserver, Pr
 	ImageIcon stopIcon = new ImageIcon(getClass().getClassLoader().getResource(stopIconPath));
 	String deleteIconPath = "main/resources/images/delete.png";
 	ImageIcon deleteIcon = new ImageIcon(getClass().getClassLoader().getResource(deleteIconPath));
-	String infoIconPath = "main/resources/images/songinfo.png"
+	String infoIconPath = "main/resources/images/songinfo.png";
 	ImageIcon infoIcon = new ImageIcon(getClass().getClassLoader().getResource(infoIconPath));
 	String artIconPath = "main/resources/images/songart.png";
 	ImageIcon artIcon = new ImageIcon(getClass().getClassLoader().getResource(artIconPath));
