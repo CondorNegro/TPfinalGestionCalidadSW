@@ -182,6 +182,7 @@ public class MP3Model implements MP3ModelInterface {
 			e.printStackTrace();
 		}
 		String songName = mp3file.getId3v2Tag().getTitle();
+		String songName = mp3file.getId3v2Tag().getTitle();
 		if(songName==null){
 			return new File(path).getName();
 		}

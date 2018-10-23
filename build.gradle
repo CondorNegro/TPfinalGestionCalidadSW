@@ -39,12 +39,12 @@ tasks.withType(Pmd) {
 
 tasks.withType(FindBugs) {
     reports {
-        xml.enabled = true
-        html.enabled = false
+        //xml.enabled = true
+        //html.enabled = false
     }
 }
 
-task findbugsMain(type: FindBugs) {
+task findSecurityBugs(type: FindBugs) {
     classes = fileTree(project.rootDir.absolutePath).include("**/*.class");
     source = fileTree(project.rootDir.absolutePath).include("**/*.java");
     classpath = files()
