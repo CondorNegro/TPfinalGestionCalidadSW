@@ -43,9 +43,7 @@ task findSecurityBugs(type: FindBugs) {
     source = fileTree(project.rootDir.absolutePath).include("**/*.java");
     classpath = files()
     pluginClasspath = project.configurations.findbugsPlugins
-
     findbugs {
-        sourceSets = [sourceSets.main]
         xml.enabled = true
         html.enabled = false
         ignoreFailures = true
