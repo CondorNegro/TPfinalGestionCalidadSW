@@ -45,7 +45,7 @@ tasks.withType(Checkstyle) {
     }
 }
 
-pmd {
+/**pmd {
     ignoreFailures = true
 }
 
@@ -54,10 +54,10 @@ tasks.withType(Pmd) {
         xml.enabled = true
         html.enabled = false
     }
-}
+}**/
 
 
-/**task pmd (type: Pmd) {
+task pmd (type: Pmd) {
 
 ignoreFailures = true
 description 'Run pmd'
@@ -76,9 +76,9 @@ reports {
     xml.enabled = true
     html.enabled = false
    }
-}**/
+}
 // add CPD to check
-/**check << {
+check << {
   File outDir = new File('build/reports/pmd/')
   outDir.mkdirs()
   ant.taskdef(name: 'cpd', classname: 'net.sourceforge.pmd.cpd.CPDTask',
@@ -86,10 +86,10 @@ reports {
   ant.cpd(minimumTokenCount: '100', format: 'xml',
     outputFile: new File(outDir , 'cpd.xml')) {
     fileset(dir: "src/main/java") {**/
- //     include(name: '**/*.java')
-//    }
-//  }
-//}
+     include(name: '**/*.java')
+    }
+  }
+}
 
 //check.doLast {
 //    project.tasks.getByName("pmd").execute()
