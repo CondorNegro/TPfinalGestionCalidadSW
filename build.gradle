@@ -32,13 +32,13 @@ pmd {
 
 tasks.withType(Pmd) {
     reports {
-        xml.enabled = false
-        html.enabled = true
+        xml.enabled = true
+        html.enabled = false
     }
 }
 
 findbugs {
-    ignoreFailures = false
+    ignoreFailures = true
     effort = "max"
     reportLevel = "low"
 }
