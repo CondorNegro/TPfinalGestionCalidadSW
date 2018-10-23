@@ -80,7 +80,7 @@ reports {
 //}
 
 findbugs {
-    ignoreFailures = true
+    ignoreFailures = false
     effort = "max"
     reportLevel = "low"
 }
