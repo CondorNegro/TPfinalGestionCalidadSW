@@ -45,7 +45,7 @@ tasks.withType(Checkstyle) {
     }
 }
 
-/**pmd {
+pmd {
     ignoreFailures = true
 }
 
@@ -54,10 +54,10 @@ tasks.withType(Pmd) {
         xml.enabled = true
         html.enabled = false
     }
-}**/
+}
 
 
-task pmd (type: Pmd) {
+/**task pmd (type: Pmd) {
 
 ignoreFailures = false
 description 'Run pmd'
@@ -85,11 +85,11 @@ check << {
     classpath: configurations.pmd.asPath)
   ant.cpd(minimumTokenCount: '100', format: 'xml',
     outputFile: new File(outDir , 'cpd.xml')) {
-    fileset(dir: "src/main/java") {
-     include(name: '**/*.java')
-    }
-  }
-}
+    fileset(dir: "src/main/java") {**/
+    //include(name: '**/*.java')
+    //}
+  //}
+//}
 
 //check.doLast {
 //    project.tasks.getByName("pmd").execute()
