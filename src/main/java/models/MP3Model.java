@@ -289,7 +289,7 @@ public class MP3Model implements MP3ModelInterface {
 			byte[] albumArt = song.getId3v2Tag().getAlbumImage();
 			return albumArt;
 		}
-		byte[] error;
+		byte[] error = "Error".getBytes();
 		return error;
 	}
 	
