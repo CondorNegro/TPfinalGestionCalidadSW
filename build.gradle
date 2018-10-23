@@ -13,7 +13,7 @@ repositories {
 
 
 jacoco {
-    toolVersion = "0.5+"
+    toolVersion = "0.7.4+"
 }
 
 jacocoTestReport {
