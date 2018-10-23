@@ -52,7 +52,7 @@ task findSecurityBugs(type: FindBugs) {
     findbugs {
         //xml.enabled = true
         //html.enabled = false
-        ignoreFailures = true
+        ignoreFailures = false
         effort = "max"
         reportLevel = "low"
     }
