@@ -3,6 +3,7 @@ apply plugin: 'checkstyle'
 apply plugin: 'pmd'
 apply plugin: 'findbugs'
 apply plugin: "jacoco"
+apply plugin: "cpd"
 
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
