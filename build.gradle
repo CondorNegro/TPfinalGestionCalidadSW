@@ -38,7 +38,7 @@ tasks.withType(Pmd) {
 }
 
 findbugs {
-    ignoreFailures = false
+    ignoreFailures = true
     effort = "max"
     reportLevel = "low"
 }
