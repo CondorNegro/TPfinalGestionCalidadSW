@@ -37,18 +37,7 @@ tasks.withType(Pmd) {
     }
 }
 
-findbugs {
-    ignoreFailures = true
-    effort = "max"
-    reportLevel = "low"
-}
 
-tasks.withType(FindBugs) {
-    reports {
-        xml.enabled = true
-        html.enabled = false
-    }
-}
 task findSecurityBugs(type: FindBugs) {
     findbugs {
         xml.enabled = true
