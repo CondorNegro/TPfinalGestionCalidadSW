@@ -29,7 +29,7 @@ tasks.withType(Checkstyle) {
     }
 }
 
-pmd {
+/*pmd {
     ignoreFailures = true
 }
 
@@ -38,28 +38,65 @@ tasks.withType(Pmd) {
         xml.enabled = true
         html.enabled = false
     }
+}*/
+
+
+task pmd (type: Pmd) {
+
+ignoreFailures = true
+description 'Run pmd'
+group 'verification'
+rulePriority = 2
+
+ruleSets = ["java-android",
+            "java-basic",
+            "java-braces",
+            "java-strings",
+            "java-design",
+            "java-unusedcode"]
+source = fileTree('src/main/java')
+
+reports {
+    xml.enabled = true
+    html.enabled = false
+   }
+}
+// add CPD to check
+check << {
+  File outDir = new File('build/reports/pmd/')
+  outDir.mkdirs()
+  ant.taskdef(name: 'cpd', classname: 'net.sourceforge.pmd.cpd.CPDTask',
+    classpath: configurations.pmd.asPath)
+  ant.cpd(minimumTokenCount: '100', format: 'xml',
+    outputFile: new File(outDir , 'cpd.xml')) {
+    fileset(dir: "src/main/java") {
+      include(name: '**/*.java')
+    }
+  }
 }
 
-/*tasks.withType(FindBugs) {
+check.doLast {
+    project.tasks.getByName("pmd").execute()
+}
+
+findbugs {
+    ignoreFailures = true
+    effort = "max"
+    reportLevel = "low"
+}
+
+tasks.withType(FindBugs) {
     reports {
         xml.enabled = true
         html.enabled = false
     }
-}*/
-
-task findSecurityBugs(type: FindBugs) {
-    classes = fileTree(project.rootDir.absolutePath).include("**/*.class");
-    source = fileTree(project.rootDir.absolutePath).include("**/*.java");
-    classpath = files()
-    pluginClasspath = project.configurations.findbugsPlugins
-    findbugs {
-        toolVersion = "3.0.1"
-        //xml.enabled = true
-        //html.enabled = false
-        ignoreFailures = true
-        effort = "max"
-        reportLevel = "low"
-    }
 }
 
 jacocoTestReport.dependsOn test
+
+test {
+    testLogging {
+        events "failed"
+        exceptionFormat "short"
+    }
+}
