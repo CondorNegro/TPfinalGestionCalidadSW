@@ -282,6 +282,7 @@ public class MP3Model implements MP3ModelInterface {
 		Mp3File song = null;
 		try {
 			song = new Mp3File(playlist.get(index));
+			song = new Mp3File(playlist.get(index));
 		} catch (UnsupportedTagException | InvalidDataException | IOException e) {
 			e.printStackTrace();
 		}
