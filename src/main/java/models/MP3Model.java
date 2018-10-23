@@ -282,7 +282,7 @@ public class MP3Model implements MP3ModelInterface {
 		Mp3File song = null;
 		try {
 			song = new Mp3File(playlist.get(index));
-			song = new Mp3File(playlist.get(index));
+			//song = new Mp3File(playlist.get(index));
 		} catch (UnsupportedTagException | InvalidDataException | IOException e) {
 			e.printStackTrace();
 		}
@@ -290,8 +290,8 @@ public class MP3Model implements MP3ModelInterface {
 			byte[] albumArt = song.getId3v2Tag().getAlbumImage();
 			return albumArt;
 		}
-		return new byte[0];
-		//return null;
+		//return new byte[0];
+		return null;
 	}
 	
 	@Override

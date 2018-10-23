@@ -109,7 +109,7 @@ task findSecurityBugs(type: FindBugs) {
         toolVersion = "3.0.1"
         //xml.enabled = true
         //html.enabled = false
-        ignoreFailures = false
+        ignoreFailures = true
         effort = "max"
         reportLevel = "low"
     }
