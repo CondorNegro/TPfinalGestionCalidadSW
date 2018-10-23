@@ -8,6 +8,12 @@ repositories {
     mavenCentral()
 }
 
+
+jacoco {
+    toolVersion = "0.7.4"
+}
+
+
 dependencies {
     testCompile 'junit:junit:4.10'
       compile fileTree(dir: 'lib', include: '*.jar')
