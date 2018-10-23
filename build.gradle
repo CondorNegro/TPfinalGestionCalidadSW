@@ -44,8 +44,8 @@ task findSecurityBugs(type: FindBugs) {
     classpath = files()
     pluginClasspath = project.configurations.findbugsPlugins
     findbugs {
-        //xml.enabled = true
-        //html.enabled = false
+        xml.enabled = true
+        html.enabled = false
         ignoreFailures = true
         effort = "max"
         reportLevel = "low"
