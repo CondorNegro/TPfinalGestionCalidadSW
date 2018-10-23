@@ -386,7 +386,7 @@ public class MP3View extends JFrame implements ActionListener, TrackObserver, Pr
 		}
 		progressBar.setMax(size);
 		int minutes = progress/60;
-		int minutes = progress/60; 
+		//int minutes = progress/60; 
 		int seconds = progress%60;
 		String a = String.format("%02d:%02d", minutes, seconds);
 		lblst.setText(a);
