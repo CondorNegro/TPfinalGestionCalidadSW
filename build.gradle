@@ -11,6 +11,9 @@ repositories {
 dependencies {
     testCompile 'junit:junit:4.10'
       compile fileTree(dir: 'lib', include: '*.jar')
+    findbugs 'com.google.code.findbugs:findbugs:3.0.1'
+    findbugs configurations.findbugsPlugins.dependencies
+    findbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.4.4'
 }
 
 checkstyle {
@@ -50,7 +53,7 @@ task findSecurityBugs(type: FindBugs) {
     classpath = files()
     pluginClasspath = project.configurations.findbugsPlugins
     findbugs {
-        toolVersion = "2.0.3"
+        toolVersion = "3.0.1"
         //xml.enabled = true
         //html.enabled = false
         ignoreFailures = false
