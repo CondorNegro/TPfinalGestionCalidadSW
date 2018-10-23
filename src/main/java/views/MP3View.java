@@ -347,7 +347,7 @@ public class MP3View extends JFrame implements ActionListener, TrackObserver, Pr
 		this.controller = controller;
 	}
 	
-	public void MakePlayIcon(){
+	public void makePlayIcon(){
 		btnPlay.setIcon(playIcon);
 	}
 	
