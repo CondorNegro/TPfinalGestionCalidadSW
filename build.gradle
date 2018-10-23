@@ -59,7 +59,7 @@ tasks.withType(Pmd) {
 
 task pmd (type: Pmd) {
 
-ignoreFailures = true
+ignoreFailures = false
 description 'Run pmd'
 group 'verification'
 rulePriority = 2
