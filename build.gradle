@@ -37,6 +37,12 @@ tasks.withType(Pmd) {
     }
 }
 
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
+}
 
 task findSecurityBugs(type: FindBugs) {
     classes = fileTree(project.rootDir.absolutePath).include("**/*.class");
@@ -44,8 +50,8 @@ task findSecurityBugs(type: FindBugs) {
     classpath = files()
     pluginClasspath = project.configurations.findbugsPlugins
     findbugs {
-        xml.enabled = true
-        html.enabled = false
+        //xml.enabled = true
+        //html.enabled = false
         ignoreFailures = true
         effort = "max"
         reportLevel = "low"
