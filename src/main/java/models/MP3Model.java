@@ -288,8 +288,9 @@ public class MP3Model implements MP3ModelInterface {
 		if (song.hasId3v2Tag()) {
 			byte[] albumArt = song.getId3v2Tag().getAlbumImage();
 			return albumArt;
-        }
-		return null;
+		}
+		byte[] error;
+		return error;
 	}
 	
 	@Override
