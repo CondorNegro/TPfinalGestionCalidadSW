@@ -85,7 +85,7 @@ check << {
     classpath: configurations.pmd.asPath)
   ant.cpd(minimumTokenCount: '100', format: 'xml',
     outputFile: new File(outDir , 'cpd.xml')) {
-    fileset(dir: "src/main/java") {**/
+    fileset(dir: "src/main/java") {
      include(name: '**/*.java')
     }
   }
